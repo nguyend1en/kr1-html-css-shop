@@ -25,6 +25,9 @@
 
 GitHub Pages: https://nguyend1en.github.io/kr1-html-css-shop/
 
+## GitHub Pages
+https://nguyend1en.github.io/kr1-html-css-shop/
+
 ## Автор
 
 ФИО:   Нгуен Зьен
