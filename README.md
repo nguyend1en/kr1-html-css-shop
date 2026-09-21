@@ -27,7 +27,9 @@ GitHub Pages: https://nguyend1en.github.io/kr1-html-css-shop/
 
 ## GitHub Pages
 https://nguyend1en.github.io/kr1-html-css-shop/
-
+git add README.md
+git commit -m "docs: add GitHub Pages link"
+git push origin mainn
 ## Автор
 
 ФИО:   Нгуен Зьен
