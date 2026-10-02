@@ -10,6 +10,7 @@
 
 - `index.html` — главная страница;
 - `css/style.css` — файл стилей;
+- `js/main.js` — скрипт модального окна и обработки формы;
 - `images/` — папка для изображений;
 - `.gitignore` — список файлов, исключённых из Git;
 - `README.md` — описание проекта.
@@ -18,18 +19,13 @@
 
 - HTML;
 - CSS;
+- JavaScript;
 - Git;
 - GitHub.
 
 ## Ссылка на опубликованный проект
 
 GitHub Pages: https://nguyend1en.github.io/kr1-html-css-shop/
-
-## GitHub Pages
-https://nguyend1en.github.io/kr1-html-css-shop/
-git add README.md
-git commit -m "docs: add GitHub Pages link"
-git push origin mainn
 
 ## Постановка контрольной работы №1
 
@@ -67,7 +63,6 @@ git push origin mainn
 - визуальная подсветка ошибочных полей через `aria-invalid`;
 - структурированный файл `css/style.css`.
 
-
 ## Реализованные элементы интерфейса
 
 - кнопки заказа в карточках товаров;
@@ -77,11 +72,8 @@ git push origin mainn
 - базовая JS-обработка формы;
 - сообщение об успешной отправке.
 
-
-
 ## Автор
 
-ФИО:   Нгуен Зьен
-Группа: ЭФБО-07-25
+ФИО: Нгуен Зьен
 
-Создана базовая структура проекта.
+Группа: ЭФБО-07-25
