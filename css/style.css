@@ -272,9 +272,24 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-/* Поля с ошибками (атрибут ставит main.js). */
-[aria-invalid="true"] {
+/*
+  Поля с ошибками (атрибут aria-invalid ставит main.js).
+  Селекторы усилены: правило ".form-field input" с обычной границей
+  имеет большую специфичность и иначе перебивало бы красный цвет.
+*/
+.form-field input[aria-invalid="true"],
+.form-field select[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
   border-color: var(--color-danger);
+}
+
+/* У чекбокса border-color не виден, поэтому подсвечиваем рамкой и текстом. */
+.form-field input[type="checkbox"][aria-invalid="true"] {
+  box-shadow: 0 0 0 2px var(--color-danger);
+}
+
+.form-field label:has(input[aria-invalid="true"]) {
+  color: var(--color-danger);
 }
 
 /* Кнопки формы. */

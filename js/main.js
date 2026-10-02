@@ -70,4 +70,7 @@ orderForm.addEventListener('submit', (event) => {
 
   // Закрываем модальное окно.
   orderDialog.close();
+
+  // Прокручиваем страницу к сообщению, чтобы оно было видно.
+  successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
 });
