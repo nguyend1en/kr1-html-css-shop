@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — ShopProject</title>
+  <meta name="description" content="Контактная информация магазина и ссылка на форму заявки.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">ShopProject</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="contacts.html" aria-current="page">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a> / <span>Контакты</span>
+    </nav>
+    <h1 class="section__title">Контакты</h1>
+
+    <div class="contacts">
+      <section class="contacts__card">
+        <h2 class="contacts__title">Как с нами связаться</h2>
+        <dl class="contacts__list">
+          <dt>Телефон</dt><dd>+7 (900) 000-00-00</dd>
+          <dt>E-mail</dt><dd>shop@example.com</dd>
+          <dt>Адрес</dt><dd>Москва, ул. Учебная, 1</dd>
+          <dt>Часы работы</dt><dd>Пн–Пт, 10:00–19:00</dd>
+        </dl>
+      </section>
+      <aside class="contacts__card contacts__card--accent">
+        <h2 class="contacts__title">Хотите заказать?</h2>
+        <p>Заполните форму заявки, и мы ответим в течение рабочего дня.</p>
+        <a class="button" href="order.html">Перейти к заявке</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="site-footer__inner">
+      <p class="site-footer__text">&copy; 2026 ShopProject. Учебный проект по дисциплине «Фронтенд и бэкенд разработка».</p>
+      <ul class="site-footer__nav">
+        <li><a href="index.html#advantages">Преимущества</a></li>
+        <li><a href="index.html#popular">Популярные товары</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <a class="to-top" href="#top" aria-label="Наверх">&uarr;</a>
+</body>
+</html>
