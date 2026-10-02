@@ -1,76 +1,41 @@
-// Получаем модальное окно по id.
-const orderDialog = document.getElementById('order-dialog');
+// Минимальная логика: открытие/закрытие модального окна и сообщение об отправке формы.
+const dialog = document.getElementById('order-dialog');
+const message = document.getElementById('success-message');
 
-// Получаем все кнопки заказа в карточках товаров.
-const orderButtons = document.querySelectorAll('.product-card__button');
+function showMessage() {
+  if (!message) return;
+  message.hidden = false;
+  setTimeout(() => {
+    message.hidden = true;
+  }, 4000);
+}
 
-// Получаем кнопку закрытия модального окна.
-const closeDialogButton = document.getElementById('close-order-dialog');
+if (dialog) {
+  const selectedProduct = document.getElementById('selected-product');
+  const closeButton = document.getElementById('close-order-dialog');
 
-// Получаем скрытое поле, в которое будет записан выбранный товар.
-const selectedProductInput = document.getElementById('selected-product');
-
-// Перебираем все кнопки «Заказать».
-orderButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    // Получаем название товара из data-атрибута.
-    const productName = button.dataset.product;
-
-    // Записываем название товара в скрытое поле формы.
-    selectedProductInput.value = productName;
-
-    // Открываем модальное окно.
-    orderDialog.showModal();
-  });
-});
-
-// Закрываем модальное окно по кнопке «Закрыть».
-closeDialogButton.addEventListener('click', () => {
-  orderDialog.close();
-});
-// Получаем форму заявки.
-const orderForm = document.getElementById('order-form');
-
-// Получаем сообщение об успешной отправке.
-const successMessage = document.getElementById('success-message');
-
-// Обрабатываем отправку формы.
-orderForm.addEventListener('submit', (event) => {
-  // Отменяем стандартную отправку формы,
-  // потому что backend пока не подключён.
-  event.preventDefault();
-
-  // Сбрасываем предыдущие признаки ошибок.
-  const formElements = Array.from(orderForm.elements);
-
-  formElements.forEach((element) => {
-    if (element.willValidate) {
-      element.removeAttribute('aria-invalid');
-    }
-  });
-
-  // Проверяем встроенные HTML-ограничения формы.
-  if (!orderForm.checkValidity()) {
-    formElements.forEach((element) => {
-      if (element.willValidate && !element.checkValidity()) {
-        element.setAttribute('aria-invalid', 'true');
-      }
+  document.querySelectorAll('.product-card__button').forEach((button) => {
+    button.addEventListener('click', () => {
+      selectedProduct.value = button.dataset.product;
+      dialog.showModal();
     });
+  });
 
-    // Показываем стандартные сообщения браузера.
-    orderForm.reportValidity();
-    return;
-  }
+  closeButton.addEventListener('click', () => dialog.close());
 
-  // Показываем сообщение об успешной отправке.
-  successMessage.hidden = false;
+  // Закрытие по клику на затемнённый фон
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+}
 
-  // Очищаем форму.
-  orderForm.reset();
-
-  // Закрываем модальное окно.
-  orderDialog.close();
-
-  // Прокручиваем страницу к сообщению, чтобы оно было видно.
-  successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+// Формы: браузер проверяет поля сам (required, type="email", pattern),
+// после успешной проверки показываем сообщение и очищаем форму.
+document.querySelectorAll('.order-form').forEach((form) => {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    form.reset();
+    if (dialog && dialog.open) dialog.close();
+    showMessage();
+  });
 });
