@@ -72,6 +72,8 @@ GitHub Pages: https://nguyend1en.github.io/kr1-html-css-shop/
 - базовая JS-обработка формы;
 - сообщение об успешной отправке.
 
+
+-
 ## Автор
 
 ФИО: Нгуен Зьен
