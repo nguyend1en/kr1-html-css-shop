@@ -1,4 +1,4 @@
-// Минимальная логика: открытие/закрытие модального окна и сообщение об отправке формы.
+// Минимальная логика: открытие/закрытие модального окна и обработка форм.
 const dialog = document.getElementById('order-dialog');
 const message = document.getElementById('success-message');
 
@@ -14,6 +14,7 @@ if (dialog) {
   const selectedProduct = document.getElementById('selected-product');
   const closeButton = document.getElementById('close-order-dialog');
 
+  // Кнопки «Заказать»: записываем товар в скрытое поле и открываем окно.
   document.querySelectorAll('.product-card__button').forEach((button) => {
     button.addEventListener('click', () => {
       selectedProduct.value = button.dataset.product;
@@ -29,11 +30,27 @@ if (dialog) {
   });
 }
 
-// Формы: браузер проверяет поля сам (required, type="email", pattern),
-// после успешной проверки показываем сообщение и очищаем форму.
+// Обработка форм: проверка, подсветка ошибок, сообщение об успехе.
 document.querySelectorAll('.order-form').forEach((form) => {
   form.addEventListener('submit', (event) => {
+    // Backend пока не подключён, поэтому отменяем стандартную отправку.
     event.preventDefault();
+
+    const elements = Array.from(form.elements);
+    elements.forEach((element) => {
+      if (element.willValidate) element.removeAttribute('aria-invalid');
+    });
+
+    if (!form.checkValidity()) {
+      elements.forEach((element) => {
+        if (element.willValidate && !element.checkValidity()) {
+          element.setAttribute('aria-invalid', 'true');
+        }
+      });
+      form.reportValidity();
+      return;
+    }
+
     form.reset();
     if (dialog && dialog.open) dialog.close();
     showMessage();
