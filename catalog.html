@@ -19,12 +19,18 @@
         <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">Каталог</span>
+    </nav>
     <h1 class="page-title">Каталог товаров</h1>
 
     <div class="catalog-layout">
@@ -37,9 +43,10 @@
           </fieldset>
           <fieldset class="filters__group">
             <legend class="filters__legend">Цена</legend>
-            <label class="filters__option"><input type="radio" name="price" value="any" checked> Любая</label>
-            <label class="filters__option"><input type="radio" name="price" value="1500"> до 1500 руб.</label>
-            <label class="filters__option"><input type="radio" name="price" value="2500"> до 2500 руб.</label>
+            <label class="filters__label" for="price-from">От</label>
+            <input class="filters__input" id="price-from" name="price-from" type="number" min="0" placeholder="0">
+            <label class="filters__label" for="price-to">До</label>
+            <input class="filters__input" id="price-to" name="price-to" type="number" min="0" placeholder="5000">
           </fieldset>
           <button class="button" type="submit" disabled>Применить</button>
         </form>
