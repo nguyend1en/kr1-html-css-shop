@@ -14,8 +14,9 @@ if (dialog) {
   const selectedProduct = document.getElementById('selected-product');
   const closeButton = document.getElementById('close-order-dialog');
 
-  // Кнопки «Заказать»: записываем товар в скрытое поле и открываем окно.
-  document.querySelectorAll('.product-card__button').forEach((button) => {
+  // Кнопки «Заказать» (в карточках и на странице товара):
+  // записываем товар в скрытое поле и открываем окно.
+  document.querySelectorAll('.product-card__button, .product-detail__button').forEach((button) => {
     button.addEventListener('click', () => {
       selectedProduct.value = button.dataset.product;
       dialog.showModal();
