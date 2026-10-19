@@ -65,6 +65,23 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
+/* ===== Ссылка «Перейти к содержимому» (доступность) ===== */
+.skip-link {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 300;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
 /* ===== Шапка (sticky) ===== */
 .site-header {
   position: sticky;

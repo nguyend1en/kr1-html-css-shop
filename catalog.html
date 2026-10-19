@@ -9,6 +9,7 @@
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
   <header class="site-header" id="top">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">ShopProject</a>
@@ -19,14 +20,20 @@
         <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
         <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+        <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
+      <a class="breadcrumbs__link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current">Каталог</span>
+    </nav>
     <h1 class="page-title">Каталог товаров</h1>
-    
+
     <div class="catalog-layout">
       <aside class="catalog-filters" aria-labelledby="filters-title">
         <h2 class="catalog-filters__title" id="filters-title">Фильтры</h2>
