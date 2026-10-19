@@ -170,6 +170,10 @@ textarea:focus-visible {
   cursor: pointer;
 }
 
+.button:active {
+  transform: translateY(1px);
+}
+
 .button:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 3px;
@@ -327,9 +331,15 @@ textarea:focus-visible {
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .product-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.product-card:focus-within {
   border-color: var(--color-primary);
 }
 
@@ -365,6 +375,7 @@ textarea:focus-visible {
 
 .product-card__badge {
   position: absolute;
+  z-index: 1;
   top: var(--space-sm);
   right: var(--space-sm);
   padding: 2px var(--space-sm);
@@ -495,6 +506,7 @@ textarea:focus-visible {
   width: 100%;
   padding: 10px 12px;
   font: inherit;
+  background-color: var(--color-bg);
   border: 1px solid var(--color-muted);
   border-radius: var(--radius-sm);
 }
@@ -851,5 +863,17 @@ textarea:focus-visible {
 
   .catalog-filters {
     position: static;
+  }
+}
+
+/* ===== Уменьшение анимаций по настройкам пользователя ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .product-card,
+  .button {
+    transition: none;
   }
 }
