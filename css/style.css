@@ -518,6 +518,22 @@ textarea:focus-visible {
   color: var(--color-muted);
 }
 
+.order-form__note {
+  margin: 0 0 var(--space-md);
+  color: var(--color-muted);
+}
+
+.order-form__required {
+  color: var(--color-danger);
+}
+
+.order-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: start;
+}
+
 .order-form__actions {
   display: flex;
   flex-wrap: wrap;
@@ -824,7 +840,8 @@ textarea:focus-visible {
 @media (max-width: 720px) {
   .catalog-layout,
   .product-detail,
-  .contacts-layout {
+  .contacts-layout,
+  .order-layout {
     grid-template-columns: 1fr;
   }
 
