@@ -227,14 +227,32 @@ textarea:focus-visible {
 
 /* ===== Секции ===== */
 .hero {
-  padding: var(--space-lg) calc(var(--space-lg) + 6px);
+  padding: var(--space-xl) calc(var(--space-lg) + 6px);
   margin-bottom: var(--space-lg);
   background-color: var(--color-hero);
   border-radius: var(--radius-md);
 }
 
+.hero__label {
+  margin: 0 0 var(--space-xs);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 .hero__title {
   margin-top: 0;
+}
+
+.hero__text {
+  max-width: 640px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
 }
 
 .section {
@@ -247,7 +265,38 @@ textarea:focus-visible {
 }
 
 .advantages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.advantages__item {
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+}
+
+.advantages__title {
+  margin: 0 0 var(--space-xs);
+  font-size: 1.1rem;
+}
+
+.advantages__text {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.order-steps {
+  margin: 0;
   padding-left: var(--space-lg);
+}
+
+.order-steps__item {
+  margin-bottom: var(--space-sm);
 }
 
 .aside-info {
@@ -258,6 +307,10 @@ textarea:focus-visible {
 
 .aside-info__title {
   margin-top: 0;
+}
+
+.aside-info__text {
+  margin: 0;
 }
 
 /* ===== Карточки (Grid + позиционирование) ===== */
